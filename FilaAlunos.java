@@ -5,23 +5,19 @@ public class FilaAlunos {
     public static void main(String[] args) {
         Queue<String> fila = new LinkedList<>();
 
-        // Adicionando 3 alunos
+        // Alunos iniciais
         fila.add("Ana");
         fila.add("Bruno");
         fila.add("Carlos");
 
-        // Imprimindo a fila
-        System.out.println("Fila atual: " + fila);
+        // Removendo o primeiro aluno
+        fila.poll(); // Remove "Ana"
 
-        // Removendo o primeiro
-        String removido = fila.poll();
-        System.out.println("Aluno removido: " + removido);
-
-        // Adicionando mais 2 alunos
+        // Adicionando mais dois alunos
         fila.add("Daniela");
         fila.add("Eduardo");
 
-        // Imprimindo novamente
+        // Imprimindo todos os nomes da fila
         System.out.println("Fila atualizada: " + fila);
     }
 }

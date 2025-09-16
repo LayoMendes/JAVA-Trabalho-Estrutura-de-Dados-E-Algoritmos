@@ -9,6 +9,7 @@ class Produto {
         this.preco = preco;
     }
 
+    @Override
     public String toString() {
         return nome + " - R$" + preco;
     }
@@ -18,27 +19,20 @@ public class ListaProdutos {
     public static void main(String[] args) {
         LinkedList<Produto> lista = new LinkedList<>();
 
-        // Adicionando produtos
+        // Produtos iniciais
         lista.addFirst(new Produto("Teclado", 120.0));
         lista.addLast(new Produto("Mouse", 80.0));
         lista.add(1, new Produto("Monitor", 950.0));
 
-        // Imprimindo a lista
-        System.out.println("Lista atual:");
-        for (Produto p : lista) {
-            System.out.println(p);
-        }
+        // Removendo o segundo produto (índice 1)
+        lista.remove(1); // Remove "Monitor"
 
-        // Removendo o segundo produto
-        Produto removido = lista.remove(1);
-        System.out.println("\nProduto removido: " + removido);
+        // Adicionando novos produtos
+        lista.addFirst(new Produto("Webcam", 200.0));      // Início
+        lista.addLast(new Produto("Impressora", 600.0));   // Final
 
-        // Adicionando mais produtos
-        lista.addFirst(new Produto("Webcam", 200.0));
-        lista.addLast(new Produto("Impressora", 600.0));
-
-        // Imprimindo novamente
-        System.out.println("\nLista atualizada:");
+        // Imprimindo todos os produtos
+        System.out.println("Lista atualizada de produtos:");
         for (Produto p : lista) {
             System.out.println(p);
         }
